@@ -4,9 +4,12 @@
 
 Shrike is world's first fully open source FPGA Dev board based on Renesas Forge FPGA SLG47910 and RP2040. 
 
-We at vicharak have kept in mind need of a learner, maker and a hobbist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing . 
+We at vicharak have kept in mind need of a learner, maker and a hobbist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing. 
 
 ## [**Now on Crowd Supply**](https://www.crowdsupply.com/vicharak/shrike)!
+
+
+
 
 ### Board level Block Diagram
  
@@ -21,6 +24,16 @@ We at vicharak have kept in mind need of a learner, maker and a hobbist while de
 6.  QSPI Flash 
 7.  2x User LED's
 8.  Type C Port for Power and Programming 
+
+
+
+
+
+<div align="center">
+
+![blink_webp](./asset/shrike_blink.webp)
+
+</div>
 
 ## Resources : 
 
@@ -67,11 +80,6 @@ Thank You
 14. Signal Generator  ( Pll for higher frequencies)
 15. Random number generator 
 16. Counter 4 bit                                       -- DONE
-
-
-
-## FPGA Flashing time Analysis 
-![image](https://github.com/user-attachments/assets/3359da79-6886-48a4-9754-b5aa416cc504)
 
 
 ### FPGA CPU Interconnect Pinouts 
