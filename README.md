@@ -4,7 +4,7 @@
 
 Shrike is world's first fully open source FPGA Dev board based on Renesas Forge FPGA SLG47910 and RP2040. 
 
-We at vicharak have kept in mind need of a learner, maker and a hobbist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing. 
+We at vicharak have kept in mind need of a learner, maker and a hobbyist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing. 
 
 ## [**Now on Crowd Supply**](https://www.crowdsupply.com/vicharak/shrike)!
 
@@ -16,11 +16,11 @@ We at vicharak have kept in mind need of a learner, maker and a hobbist while de
 ![shrike](https://github.com/user-attachments/assets/6f585615-6b91-49ec-aa3d-26e50eec5a31)
 
 ### Key Features : 
-1.  RP2040 ARM Cortex M0 
-2.  FPGA with 1100 Luts
+1.  RP2040 - ARM Cortex M0 
+2.  FPGA with 1120 5 Input LUT's
 3.  PMOD Compatible Connector
-4.  Bread Board compatible Io's from both FPGA and MCU 
-5.  High Speed IO interface Between FPGA and MCU
+4.  Bread Board compatible 
+5.  IO interface Between FPGA and MCU
 6.  QSPI Flash 
 7.  2x User LED's
 8.  Type C Port for Power and Programming 
@@ -53,36 +53,13 @@ We at vicharak have kept in mind need of a learner, maker and a hobbist while de
 
 ### Note
  
-We are building a ecosystem for learners makers and hobbist around shrike and the projects that will follow in the future thus we request you contribution in the same. Join our communities across all the platforms,pitch and showcase your ideas with Shrike. 
+We are building a ecosystem for learners makers and hobbyist around shrike and the projects that will follow in the future thus we request you contribution in the same. Join our communities across all the platforms,pitch and showcase your ideas with Shrike. 
 
 Thank You 
  
 
-## Potential application of Shrike ( Ideas) 
- 1. Peripheral Coprocessor 
- 2. ROS Node using Micro ROS
- 3. Protocol converter (USB to uart ,  Uart-SPI, SPI-I2C etc)
 
-### Demo Projects - TODO ( Your contributions are appreciated )  
-
-1. LED Water                         
-2. Servo Controller  
-3. I2C to Uart 
-4. UART to 7 seg  
-5. RISC V SERV 
-7. LCD Display 16*2 
-8. Periplex (port) 
-9. 4 bit 7 segment Controller 
-10. SPI Display Driver 
-11. 8 Bit protocol for v2 
-12. FFT 
-13. PWM Coprocessor ( servo and motor controls)
-14. Signal Generator  ( Pll for higher frequencies)
-15. Random number generator 
-16. Counter 4 bit                                       -- DONE
-
-
-### FPGA CPU Interconnect Pinouts 
+### FPGA CPU Interconnect Pin-outs 
 
 <div align="center">
 
@@ -99,6 +76,16 @@ Thank You
 </div>
 
 
+## Contribution Guideline  
+
+Your contribution to the shrike project are always welcome . 
+To contribute fork the project test your changes and create a PR. Few things in to keep in mind for better contribution 
+
+1. Try to document as much as possible. 
+2. Keep your design clean and readable.
+3. Do not push unnecessary directories and .env.
+4. Make sure your changes can be recreated. 
+
 ## Resources 
  #### 1. Learning Resources 
 
@@ -106,6 +93,7 @@ Thank You
    2. [Nandland FPGA Tutorials](https://nandland.com/fpga-101/)
    3. [FPGA for Fun](https://www.fpga4fun.com/)
    4. [Lawrie FPGA Tutorials](https://lawrie.github.io/blackicemxbook/)
+   5. [ProjectF](https://projectf.io/)
   
  #### 2. Similar Hardware Projects 
    1. [Ulx3s-Project](https://ulx3s.github.io/)
