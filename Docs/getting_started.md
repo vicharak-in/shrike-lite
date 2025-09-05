@@ -35,7 +35,7 @@ The bitstream can be uploaded on the shrike using one of these two ways
    1. Using a GUI Based-IDE (Thonny)
    2. Using Command line interface (CLI)
 
-In this guide we will use Thonny however guide to programme using CLI can be found here.
+In this guide we will use Thonny however guide to programme using CLI can be found [here](./shrike_cli_guide.md).
 
 Now we will need to get thonny on our pc. Installation is quite straight forward You can download it from [here](https://thonny.org/). 
 
