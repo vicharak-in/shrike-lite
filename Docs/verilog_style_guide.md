@@ -1,3 +1,5 @@
+(verilog_style_guide)=
+
 # Verilog Style Guide for Shrike 
 
 The renesas go configure software is a little  different from the vivado or Quartus Prime if you have used them before you will have to take care of these few things while design verilog for the same. Just read the log below to know about it.  
