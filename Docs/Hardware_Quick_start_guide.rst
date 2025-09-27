@@ -16,7 +16,7 @@ Hardware Features :
 
     - Renesas FPGA 
     - RP2040
-    - 128MB Flash Memory
+    - 128Mb Flash Memory
     - PMOD Connector 
     - Reset Button 
     - Boot Select Button 
@@ -34,7 +34,7 @@ GPIO's
 
 The Shrike Packed with User IO's I have 23 RP2040 MCU IO's and 14 FPGA IO's all of which are 3.3V compatible.
 
-The Board also has Header for 1.8V , 3.3V Power Rails for power peripherals POWER 
+The Board also has Header for 3.3V and 5V Power Rails for powering eternal peripherals. 
 
 PMOD Connector
 ################
@@ -50,7 +50,7 @@ User LED's
 ################
 
 The board has two user LED's one for the RP2040 and one for the FPGA. The LED's are connected to GPIO pins of the respective chips.
-The RP2040 LED is connected to GPIO 24 and the FPGA LED is connected to GPIO 18.
+The RP2040 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.
 The LED's are active high meaning that when the GPIO pin is set to hight the LED will turn on and when the GPIO pin is set to low the LED will turn off.
 
 Programming 
@@ -71,8 +71,7 @@ The board can be powered using one of these two methods:
 ** Note**: The board can be powered using the USB Type C port or the header marked 3.3V. Do not power the board using both methods at the same time as this may damage the board.
 
 The voltage on the Type C should be 5V and the voltage on the header should be 3.3V. The board has a voltage regulator that converts the 5V to 3.3V for the RP2040 and the FPGA.
-The voltage on the PMOD connector is 3.3V and the voltage on the header marked 1.8V is 1.8V. The board has a voltage regulator that converts the 3.3V to 1.8V for the PMOD connector.
+The voltage on the PMOD connector is 3.3V.
 
 See `here <./FPGA_Programming.rst>`_  Guide to getting started with FPGA Programming. 
-
 
