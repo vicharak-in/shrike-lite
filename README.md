@@ -16,8 +16,9 @@ We at vicharak have kept in mind need of a learner, maker and a hobbyist while d
 ![shrike](https://github.com/user-attachments/assets/6f585615-6b91-49ec-aa3d-26e50eec5a31)
 
 ### Key Features : 
-1.  RP2040 - ARM Cortex M0 
-2.  FPGA with 1120 5 Input LUT's
+
+1.  FPGA with 1120 5 Input LUT's
+2.  RP2040 - ARM Cortex M0
 3.  PMOD Compatible Connector
 4.  Bread Board compatible 
 5.  IO interface Between FPGA and MCU
@@ -99,4 +100,5 @@ To contribute fork the project test your changes and create a PR. Few things in 
    1. [Ulx3s-Project](https://ulx3s.github.io/)
    2. [TinyFPGA-Project](https://tinyfpga.com/)
    3. [icebreaker-Project](https://github.com/icebreaker-fpga/icebreaker)
+   4. [pico-ice](https://pico-ice.tinyvision.ai/)
    
