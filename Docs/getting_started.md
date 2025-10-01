@@ -25,7 +25,7 @@ Congratulations you have successfully uploaded the uf2.
 
 ### 2. Get the bitstream(.bin) for led blink 
 
-To programme a FPGA you will require  bitstream file this is much like a firmware for MCU's we will see how to generate these but for now we have uploaded the bitstream required for led_bin you can download them the corresponding to your board's version [here](https://github.com/vicharak-in/shrike_fpga/tree/main/Test_bitstreams/v1_4). 
+To programme a FPGA you will require  bitstream file this is much like a firmware for MCU's we will see how to generate these but for now we have uploaded the bitstream required for led_bin you can download them the corresponding to your board's version [here](https://github.com/vicharak-in/shrike_fpga/tree/main/test/bitstreams). 
 
 Now that you have both uf2 and bin file settled up lets move forward and upload the bitstream to board.
 
