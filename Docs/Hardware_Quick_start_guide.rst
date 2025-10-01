@@ -1,18 +1,18 @@
 =====================================
-Shrike Dev Board - Hardware Quick Start Guide
+Shrike FPGA - Hardware Overview
 =====================================
 Shrike is a low-cost, low-power, and easy-to-use FPGA development board that combines both the 
 Renesas FPGA and the RP2040 microcontroller. It is designed for hobbyists, students, and professionals to explore and prototype FPGA-based designs with ease. 
 
-
-.. image:: ./images/Shrike_with_pmod.jpeg
-   :width: 900
+.. image:: ./images/shrike_block_dia.png
    :scale: 100
    :alt: Shrike_Dev_Board
    :align: center
 
 The board features a variety of peripherals to support various applications. Some of the key features include: 
+
 Hardware Features :
+####################
 
     - Renesas FPGA 
     - RP2040
