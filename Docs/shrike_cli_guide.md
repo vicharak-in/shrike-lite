@@ -1,3 +1,5 @@
+(shrike_cli_guide)=
+
 # User guide to access and use shrike from your terminal(CLI)
 
 If you are anything like our team at [vicharak](vicharak.in) and you don't want to move away from the terminal. We have got you cover here is a quick guide for accessing and using shrike from terminal (CLI). 

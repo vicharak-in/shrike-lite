@@ -1,4 +1,6 @@
-# Getting Started with Shrike FPGA  
+(getting_started)=
+
+# Getting Started   
 
 Hello, so you have got the Shrike FPGA , Nice ! Now lets blink some leds and say hello to world of hardware. 
 
