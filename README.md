@@ -2,7 +2,7 @@
 
 ![image](./asset/shirke-angle-01.jpg)
 
-We usually work on very complex FPGA-based projects built around Vaaman and its upcoming series. However, Shrike-lite is a passion project at Vicharak—driven by our love for engineering across both embedded microcontrollers and FPGAs.
+We usually work on very complex FPGA-based projects built around Vaaman and its upcoming series. However, Shrike-lite is a passion project at Vicharak, driven by our love for engineering across both embedded microcontrollers and FPGAs.
 
 Our goal is to make FPGAs accessible to everyone by offering robust toolchains, high-quality hardware, and strong ecosystem support. We’re committed to keeping the hardware prices extremely low, and every piece of software for Shrike will be completely open-source.
 
