@@ -2,11 +2,15 @@
 
 ![image](./asset/shirke-angle-01.jpg)
 
-Shrike is world's first fully open source FPGA Dev board based on Renesas Forge FPGA SLG47910 and RP2040. 
+We usually work on very complex FPGA-based projects built around Vaaman and its upcoming series. However, Shrike-lite is a passion project at Vicharak, driven by our love for engineering across both embedded microcontrollers and FPGAs.
 
-We at vicharak have kept in mind need of a learner, maker and a hobbyist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing.
+Our goal is to make FPGAs accessible to everyone by offering robust toolchains, high-quality hardware, and strong ecosystem support. We’re committed to keeping the hardware prices extremely low, and every piece of software for Shrike will be completely open-source.
 
-For getting your hands on the hardware contact [sales@vicharak.in](mailto:sales@vicharak.in)
+We invite contributors from all over the world to join us in this mission. Together, let’s make FPGA technology truly accessible to all. 
+
+Shrike-lite is lighter version of world's first fully open source FPGA Dev board [crowdsupply](https://www.crowdsupply.com/vicharak/shrike) releasing on CrowdSupply Renesas Forge FPGA SLG47910 and RP2350. 
+
+We at vicharak have kept in mind need of a learner, maker and a hobbyist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing. 
 
 ### Board level Block Diagram
 
