@@ -4,7 +4,7 @@ Shrike FPGA - Hardware Overview
 Shrike is a low-cost, low-power, and easy-to-use FPGA development board that combines both the 
 Renesas FPGA and the RP2040 microcontroller. It is designed for hobbyists, students, and professionals to explore and prototype FPGA-based designs with ease. 
 
-.. image:: ./images/shrike_block_dia.png
+.. image:: ./../asset/shrike_lite.svg
    :scale: 100
    :alt: Shrike_Dev_Board
    :align: center
@@ -50,7 +50,7 @@ User LED's
 ################
 
 The board has two user LED's one for the RP2040 and one for the FPGA. The LED's are connected to GPIO pins of the respective chips.
-The RP2040 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.
+The RP2040/RP2350 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.
 The LED's are active high meaning that when the GPIO pin is set to hight the LED will turn on and when the GPIO pin is set to low the LED will turn off.
 
 Programming 
@@ -63,7 +63,7 @@ can be programmed using MicroPython or C whereas the FPGA needed to be
 programmed using Verilog in The Renesas Go Configure IDE.
 
 Powering the Board
-################
+##################
 The board can be powered using one of these two methods:
  1. The USB Type C port
  2. Header 1 marked 3.3V and any of the GND pins on the board.
@@ -73,5 +73,5 @@ The board can be powered using one of these two methods:
 The voltage on the Type C should be 5V and the voltage on the header should be 3.3V. The board has a voltage regulator that converts the 5V to 3.3V for the RP2040 and the FPGA.
 The voltage on the PMOD connector is 3.3V.
 
-See `here <./FPGA_Programming.rst>`_  Guide to getting started with FPGA Programming. 
+See `here <./getting_started.md>`_  Guide to getting started with FPGA Programming. 
 
