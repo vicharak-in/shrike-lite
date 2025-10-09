@@ -42,13 +42,11 @@ We at vicharak have kept in mind need of a learner, maker and a hobbyist while d
 
 
 
-## Resources : 
-
-1. [Getting Started Guide ](./Docs/FPGA_Programming.rst)
-2. [Comparitive analysis between cpu and FPGA on Shrike](./Docs/RP2040vsFPGA.md)
+### Check out 
+ 1. Getting started guide [here](./Docs/getting_started.md) .
 
 ## Useful Links : 
-1. FPGA Datasheet - [Renesas Forge FPGA ](https://www.renesas.com/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga)
+1. FPGA Datasheet - [Renesas Forge FPGA ](https://www.renesas.com/en/products/slg47910#overview)
 
 2. EDA Tool - [Go Configure Software Hub](https://www.renesas.com/en/software-tool/go-configure-software-hub)
 
@@ -81,12 +79,14 @@ Thank You
 
 | FPGA PIN | RP 2040 PIN |       RP2040         |       FPGA             |
 |----------|-------------|----------------------|------------------------|
-| 0        | 13          | GPIO UART0-RX /SCL   |GPIO                    |
-| 1        | 12          | GPIO UART0-TX /SDA   | GPIO                   |
+| EN       | 13          | GPIO                 | EN (Enable)            |
+| PWR      | 12          | GPIO                 | PWR                    |
 | 3        | 2           | GPIO                 | SPI_SCLK               |
 | 4        | 1           | UART RX / GPIO       | SPI_SS                 |
 | 5        | 3           | GPIO                 | SPI_SI (MOSI)          |
 | 6        | 0           | UART TX / GPIO       | SPI_SO (MISO) / CONFIG |
+| 18       | 14          | GPIO / I2C 1 SDA     | GPIO                   |
+| 17       | 15          | GPIO / I2C 1 SDA     | GPIO                   |
 
  
 </div>
