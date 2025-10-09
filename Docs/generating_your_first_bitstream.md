@@ -23,8 +23,8 @@ We will create a LED Blinking Project for this guide and we will start by launch
 
 </div>
 
-2. Double click on the FPGA ( ) in our case.
-NOTE: You can also just open the led blink project available in the Projects section of github that can be one from the open option in hte bottom right corner and then navigate the the ffpga file of that project. 
+2. Double click on the FPGA (SLG47910 (BB)) in our case.
+NOTE: You can also just open the led blink project available in the Projects section of github that can be done from the open option in the bottom right corner and then navigate to the ffpga file of that project. 
 
 <div align="center">
 
@@ -40,7 +40,7 @@ NOTE: You can also just open the led blink project available in the Projects sec
 
 </div>
 
-4. Now you will see the window Project setting select the first values in each box by clicking the arrow beside it.
+4. Now you will see the "Project setting" window select the first values in each box by clicking the arrow beside it.
 It should look like this.
 
 <div align="center">
@@ -49,7 +49,7 @@ It should look like this.
 
 </div>
 
-5. Double click on hte light blue square (FPGA COre) in and you should see this window.  Now you are done with setup lets design our blink led hardware.    
+5. Double click on the light blue square (FPGA Core) in and you should see this window. Now you are done with setup lets design our blink led hardware.    
 
 <div align="center">
 
@@ -72,7 +72,7 @@ Check out this short video guide.
 
 ### 2. Design 
 
-Now we will how we design the led_blink hardware that is Verilog for the design. 
+Now we will how we can design a led_blink hardware. 
 
 So as of now we are aware that we need a led that should be blinked so lets declare that in verilog. 
 
@@ -84,7 +84,7 @@ endmodule
 
 Now every output requires a output enable for forge FPGA thus we will define a led_en pin as well and we will keep it high ( value = 1) by default so that led signal ( IO) is always a output from the board.
 
-We need to figure out a way to so how are we going to blink ( toggle ) this led for convience lets assume we want to blink it every second . So this tell's us that we need some kind of clock to check the time and how much time has passed. 
+We need to figure out a way to so how are we going to blink ( toggle ) this led , for convince lets assume we want to blink it every second . So this tell's us that we need some kind of clock to check the time and how much time has passed. 
 
 We have a clock on out FPGA its a a pulsating that creates a 50Mhz square wave we have to use this to calculate to one second to do so we can simply add a counter that counts till 50_000_000 cycles as that how much we will require to reach one second at a 50 Mhz frequency. 
 
@@ -139,9 +139,9 @@ Now we will move to IO planning and bitstream generation.
 
 ### 3. IO Planning and PNR 
 
-Now that we have synthesized hte verilog lets connect the signal to the Input outputs pins. Follow the command below to map hte required pins.
+Now that we have synthesized the verilog lets connect the signal to the Input outputs pins. Follow the command below to map the required pins.
 
- 1. Open the IO planner from the top bar in hte software.
+ 1. Open the IO planner from the top bar in the software.
 
 <div align="center">
 
@@ -149,7 +149,7 @@ Now that we have synthesized hte verilog lets connect the signal to the Input ou
 
 </div>
 
- 2. Now we will first map we will map the clock pins filter the selection by using CLK and OSC_ctrl tab.
+ 2. Now we will first map the clock pins , filter the selection by using CLK and OSC_ctrl tab.
 
  We have two clock related signal "clk" and "clk_en" map them to "OSC_CLK" and "OSC_EN" respectively.
 
@@ -160,8 +160,9 @@ Now that we have synthesized hte verilog lets connect the signal to the Input ou
 </div>
  
 
- 3. Led map the led out signals filter the selection using only he GPIO uptick all the other onces. 
- We have two signal related to led "LED" and "LED_en" as out on board led is connected to pin number 16 we will connected these signals to "GPIO16_OUT"  and "GPIO16_OE" respectively.
+ 3. Lets map the led out signals , filter the selection using only he GPIO , Unpick all the other onces. 
+
+ We have two signal related to led "LED" and "LED_en" as output, on shrike led is connected to pin number 16 we will connected these signals to "GPIO16_OUT"  and "GPIO16_OE" respectively.
 
 <div align="center">
 
@@ -190,7 +191,6 @@ Now that we have synthesized hte verilog lets connect the signal to the Input ou
 </div>
 
 
-Now that you have generated your first bitstream let's upload these on the FPGA these will be pretty simple follow the step 3-4 step in the guide or complete guide if you checking it for first time [getting_started](./getting_started.md) . 
+Now that you have generated your first bitstream let's upload these on the FPGA, that will be pretty simple follow the step 3-4 in this guide or complete guide if you checking it for first time [getting_started](./getting_started.md) . 
 
-
-I will also recommend you to go through hte the docs available [here](https://www.renesas.com/en/products/slg47910).
+Check out the [Verilog Style Guide](./verilog_style_guide.md) next.

@@ -4,7 +4,7 @@
 
 Hello, so you have got the Shrike FPGA , Nice ! Now lets blink some leds and say hello to world of hardware. 
 
-We will see along the way how to setup the required software and toolchain as well.
+We will along the way see how to setup the required software and toolchain as well.
 
 
 
@@ -18,7 +18,7 @@ We have created custom UF2 for shrike this contains a shrike.py library that has
 Now we will here safely assume that you will be using our uf2.
 
 
-1. Download the uf2 corresponding to your board version from the shrike's [Github](https://github.com/vicharak-in/shrike_fpga).
+1. Download the uf2 corresponding to your board version from the shrike's [Github](https://github.com/vicharak-in/shrike-lite).
 2. Hold the boot button on the board and connect it the your pc now shrike will show up as as storage device.
 3. Copy the downloaded uf2 in storage device you can simply drag and drop in mostly all the devices. 
 4. After the successful copying the storage device should disappear.
@@ -27,7 +27,7 @@ Congratulations you have successfully uploaded the uf2.
 
 ### 2. Get the bitstream(.bin) for led blink 
 
-To programme a FPGA you will require  bitstream file this is much like a firmware for MCU's we will see how to generate these but for now we have uploaded the bitstream required for led_bin you can download them the corresponding to your board's version [here](https://github.com/vicharak-in/shrike_fpga/tree/main/test/bitstreams). 
+To programme a FPGA you will require  bitstream file this is much like a firmware for MCU's we will see how to generate these but for now we have uploaded the bitstream required for led_bin you can download them the corresponding to your board's version [here](https://github.com/vicharak-in/shrike-lite/tree/main/test/bitstreams). 
 
 Now that you have both uf2 and bin file settled up lets move forward and upload the bitstream to board.
 
@@ -44,7 +44,7 @@ Now we will need to get thonny on our pc. Installation is quite straight forward
 Now that we have got all the required tools set-ed up let blink some leds.
 
 Open thonny and connect the board to the laptop (do not press boot button this time). And do these two things 
-   1. Connect the board from the bottom right corner. 
+   1. Connect the board from the bottom right corner of Thonny IDE.
    2. Go to file view mode in the thonny to see the rp2040 as a file system.
 
 ### 4. Flashing the bitstream  

@@ -14,9 +14,8 @@ The board features a variety of peripherals to support various applications. Som
 Hardware Features :
 ####################
 
-    - Renesas FPGA 
+    - Renesas FPGA with 1120 5 Input LUT's
     - RP2040
-    - 128Mb Flash Memory
     - PMOD Connector 
     - Reset Button 
     - Boot Select Button 
@@ -34,11 +33,13 @@ GPIO's
 
 The Shrike Packed with User IO's I have 23 RP2040 MCU IO's and 14 FPGA IO's all of which are 3.3V compatible.
 
-The Board also has Header for 3.3V and 5V Power Rails for powering eternal peripherals. 
+The Board also has Header for 3.3V and 5V Power Rails for powering external peripherals. 
 
 PMOD Connector
 ################
 The Shrike Board has a PMOD connector for connecting to various peripherals the PMOD connector is 3.3 V Compatible
+
+.. note:: All the pins on shrike are 3.3 V compatible supplying anything more then that will result in damage to IC's on  board which are beyond repair. 
 
 
 Type C Port 
@@ -51,6 +52,7 @@ User LED's
 
 The board has two user LED's one for the RP2040 and one for the FPGA. The LED's are connected to GPIO pins of the respective chips.
 The RP2040/RP2350 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.
+
 The LED's are active high meaning that when the GPIO pin is set to hight the LED will turn on and when the GPIO pin is set to low the LED will turn off.
 
 Programming 
@@ -58,9 +60,7 @@ Programming
 
 
 Both the IC on the board have seprate programming models. The RP2040 
-can be programmed using MicroPython or C whereas the FPGA needed to be 
-
-programmed using Verilog in The Renesas Go Configure IDE.
+can be programmed using MicroPython or C whereas the FPGA needed to be programmed using Verilog in the Renesas Go Configure hub.
 
 Powering the Board
 ##################
@@ -68,9 +68,10 @@ The board can be powered using one of these two methods:
  1. The USB Type C port
  2. Header 1 marked 3.3V and any of the GND pins on the board.
 
-** Note**: The board can be powered using the USB Type C port or the header marked 3.3V. Do not power the board using both methods at the same time as this may damage the board.
+ .. note:: The board can be powered using the USB Type C port or the header marked 3.3V. Do not power the board using both methods at the same time as this may damage the board.
 
 The voltage on the Type C should be 5V and the voltage on the header should be 3.3V. The board has a voltage regulator that converts the 5V to 3.3V for the RP2040 and the FPGA.
+
 The voltage on the PMOD connector is 3.3V.
 
 See `here <./getting_started.md>`_  Guide to getting started with FPGA Programming. 
