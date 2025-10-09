@@ -1,6 +1,6 @@
 # Shrike Bitstream Generation Guide 
 
-Bitstream is a firmware that is used to programme the FPGA and map our design to it. Shrike uses a Renesas Forge FPGA SLGV SLG47910 1K Luts FPGA.The datasheet for which can be found [here](https://www.renesas.com/en/products/slg47910)
+Bitstream is a firmware that is used to programme the FPGA and map our design to it. Shrike uses a Renesas Forge FPGA SLGV SLG47910 1K Luts FPGA.The datasheet for which can be found [here](https://www.renesas.com/en/products/slg47910) .
 
 
 For generating the bitstream for shrike we will use these steps. 
@@ -9,9 +9,9 @@ For generating the bitstream for shrike we will use these steps.
   2. Design & Synthesis 
   3. IO Mapping and Placement and Routing (PNR)
 
-I am here assuming that you have installed all the tools required if not check this guide HERE. 
+I am here assuming that you have installed all the tools required if not check tools_setup_guide [HERE](./tools_setup_guide.md).
 
-Now lets create our example and run it on FPGA and we will blinking a led this time. We will start by creating a new project in the Go Configure Software Hub 
+We will create a LED Blinking Project for this guide and we will start by launching the Go Configure Software Hub.  
 
 ### 1. Setup  
 
