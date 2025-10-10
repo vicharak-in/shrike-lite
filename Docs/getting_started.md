@@ -2,7 +2,7 @@
 
 # Getting Started   
 
-Hello, so you have got the Shrike FPGA , Nice ! Now lets blink some leds and say hello to world of hardware. 
+Hello, so you have got the Shrike FPGA, Nice! Now lets blink some leds and say hello to world of hardware. 
 
 We will along the way see how to setup the required software and toolchain as well.
 
@@ -13,7 +13,7 @@ Now that you have your hardware in hand lets follow these steps.
 
 ### 1. Uploading the shrike UF2  
 
-We have created custom UF2 for shrike this contains a shrike.py library that has custom function to flash fpga and few others. You can use the normal rpi micro python uf2 as well however the step's would be different. 
+We have created custom UF2 (firmware) for shrike this contains a shrike.py library that has custom function to flash fpga and few others. You can use the normal rpi micro python uf2 as well however the step's would be different. 
 
 Now we will here safely assume that you will be using our uf2.
 

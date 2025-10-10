@@ -31,13 +31,13 @@ Hardware Features :
 GPIO's 
 ################
 
-The Shrike Packed with User IO's I have 23 RP2040 MCU IO's and 14 FPGA IO's all of which are 3.3V compatible.
+The Shrike Packed with 23 RP2040 MCU IO's and 14 FPGA IO's all of which are 3.3V compatible.
 
 The Board also has Header for 3.3V and 5V Power Rails for powering external peripherals. 
 
 PMOD Connector
 ################
-The Shrike Board has a PMOD connector for connecting to various peripherals the PMOD connector is 3.3 V Compatible
+The Shrike Board has a PMOD connector for connecting to various peripherals the PMOD connector is 3.3 V Compatible.
 
 .. note:: All the pins on shrike are 3.3 V compatible supplying anything more then that will result in damage to IC's on  board which are beyond repair. 
 
@@ -53,7 +53,7 @@ User LED's
 The board has two user LED's one for the RP2040 and one for the FPGA. The LED's are connected to GPIO pins of the respective chips.
 The RP2040/RP2350 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.
 
-The LED's are active high meaning that when the GPIO pin is set to hight the LED will turn on and when the GPIO pin is set to low the LED will turn off.
+The LED's are active high meaning that when the GPIO pin is set to high the LED will turn on and when the GPIO pin is set to low the LED will turn off.
 
 Programming 
 ################
