@@ -10,7 +10,7 @@ We invite contributors from all over the world to join us in this mission. Toget
 
 Shrike-lite is lighter version of world's first fully open source FPGA Dev board [crowdsupply](https://www.crowdsupply.com/vicharak/shrike) releasing on CrowdSupply Renesas Forge FPGA SLG47910 and RP2350. 
 
-We at vicharak have kept in mind need of a learner, maker and a hobbyist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing. 
+We at vicharak have kept in mind need of a learner, maker and a hobbyist while designing this art. This dev board will be your stepping stone in the field of FPGA, reconfigurable and heterogenous computing. 
 
 ### Board level Block Diagram
 
@@ -35,7 +35,7 @@ We at vicharak have kept in mind need of a learner, maker and a hobbyist while d
 
 <div align="center">
 
- <img src="./asset/shrike_render.png" alt="shrike" width="60%">
+ <img src="./Docs/images/shrike_pinouts.png" alt="shrike" width="80%">
 
 </div>
 
@@ -43,8 +43,11 @@ We at vicharak have kept in mind need of a learner, maker and a hobbyist while d
 
 
 ### Check out 
- 1. Getting started guide [here](./Docs/getting_started.md) .
+ 1. [Getting started guide](./Docs/getting_started.md) .
+ 2. [PIN_OUTS](./Docs/shrike_pinouts.md)
 
+
+ 
 ## Useful Links : 
 1. FPGA Datasheet - [Renesas Forge FPGA ](https://www.renesas.com/en/products/slg47910#overview)
 
@@ -58,7 +61,7 @@ We at vicharak have kept in mind need of a learner, maker and a hobbyist while d
 
 ### Note
  
-We are building a ecosystem for learners makers and hobbyist around shrike and the projects that will follow in the future thus we request you contribution in the same. Join our communities across all the platforms,pitch and showcase your ideas with Shrike. 
+We are building a ecosystem for learners , makers and hobbyist around shrike and the projects that will follow in future, thus we request you contribution in the same. Join our communities across all the platforms, pitch and showcase your ideas with Shrike. 
 
 Thank You 
  
@@ -94,13 +97,26 @@ Thank You
 
 ## Contribution Guideline  
 
-Your contribution to the shrike project are always welcome . 
-To contribute fork the project test your changes and create a PR. Few things in to keep in mind for better contribution 
+Your contribution to the Shrike project are always welcome.
+To contribute fork the project test your changes and create a PR. Few things in to keep in mind for better contribution. 
 
 1. Try to document as much as possible. 
 2. Keep your design clean and readable.
 3. Do not push unnecessary directories and .env.
 4. Make sure your changes can be recreated. 
+
+
+#### A Note for Contributors ❤️
+
+We really appreciate everyone’s enthusiasm in improving the project!  
+However, please avoid opening PRs for very small changes such as:
+- Minor rewording of documentation (that doesn’t improve clarity)
+- Typo fixes in comments or README
+- Indentation or formatting-only edits
+
+These types of changes create noise in the PR queue and make it harder to review substantial contributions.  
+If you spot something small, feel free to open an **issue** instead so we can batch those improvements together. 
+
 
 ## Resources 
  #### 1. Learning Resources 
