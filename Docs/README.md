@@ -1,9 +1,8 @@
 # Welcome to Shrike Documentation 
 
-Hello its great to see that you have got shrike dev Board . Now that you have the hardware you can follow the guides we have created and gets your hand's dirty with real hardware. 
+Hello! It’s great to see that you have the Shrike Dev Board. Now that you have the hardware, you can follow the guides we’ve created and get your hands dirty with real hardware. 
 
-For a bit clarification and to insure there is no confusion please follow this Index (Read from 1 to 10).
-
+For clarification and to avoid any confusion, please refer to the following index. (Read from 1 to 10).
 
  1. [Hardware Overview](./hardware_overview.rst)
  2. [Getting Started](./getting_started.md) 
@@ -17,8 +16,7 @@ For a bit clarification and to insure there is no confusion please follow this I
  7. [CLI Guide](./shrike_cli_guide.md)
 
 
-
- These guide are made for aiding you in learning journey however onces you done go through these to get more in depth info. 
+ These guides are designed to support you in your learning journey. However, once you have completed the initial steps, we encourage you to read the resources given below for more in-depth information.
 
  * [Forge FPGA SLG47910 Datasheet](https://www.renesas.com/en/document/dst/slg47910-datasheet?r=25546631) 
  * [Go Configure Forge FPGA Workshop](https://www.renesas.com/en/document/gde/forgefpga-workshop-user-guide?r=25546631)
