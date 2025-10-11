@@ -10,7 +10,7 @@ For a bit clarification and to insure there is no confusion please follow this I
  3. [Tools Setup](./tools_setup_guide.md)
  4. [Generating Bitstream](./generating_your_first_bitstream.md)
  5. [Verilog Style Guide](./verilog_style_guide.md)
- 6. [Shrike Pinout](./fpga_rp2040.md)
+ 6. [Shrike Pinout](./shrike_pinouts.md)
 
 ##### Optional (but interesting) 
 
