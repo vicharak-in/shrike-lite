@@ -9,9 +9,9 @@ For generating the bitstream for shrike we will use these steps.
   2. Design & Synthesis 
   3. IO Mapping and Placement and Routing (PNR)
 
-I am here assuming that you have installed all the tools required if not check tools_setup_guide [HERE](./tools_setup_guide.md).
+I am here assuming that you have installed all the tools required if not check [tools setup guide](./tools_setup_guide.md).
 
-We will create a LED Blinking Project for this guide and we will start by launching the Go Configure Software Hub.  
+We will create a LED Blinking Project for this guide and we will start by launching the Go Configure Software Hub.
 
 ### 1. Setup  
 
@@ -82,9 +82,9 @@ module led_blink (output led,
 endmodule
 ```
 
-Now every output requires a output enable for forge FPGA thus we will define a led_en pin as well and we will keep it high ( value = 1) by default so that led signal ( IO) is always a output from the board.
+Now every output requires a output enable for forge FPGA thus we will define a led_en pin as well and we will keep it high (value = 1) by default so that led signal (IO) is always a output from the board.
 
-We need to figure out a way to so how are we going to blink ( toggle ) this led , for convince lets assume we want to blink it every second . So this tell's us that we need some kind of clock to check the time and how much time has passed. 
+We need to figure out a way to so how are we going to blink (toggle) this led, for convince lets assume we want to blink it every second. So this tell us that we need some kind of clock to check the time and how much time has passed. 
 
 We have a clock on out FPGA its a a pulsating that creates a 50Mhz square wave we have to use this to calculate to one second to do so we can simply add a counter that counts till 50_000_000 cycles as that how much we will require to reach one second at a 50 Mhz frequency. 
 
@@ -124,7 +124,7 @@ endmodule
 
 There are a lot other ways to blink an led as well and you can always use those however before writing verilog for shrike please checkout [Style Guide](./verilog_style_guide.md) for reference .
 
-However here we are assuming that you are using the code mentioned above . Get this code in the main.v in the software.
+However here we are assuming that you are using the code mentioned above. Get this code in the main.v in the software.
 
 <div align="center">
 
@@ -139,7 +139,7 @@ Now we will move to IO planning and bitstream generation.
 
 ### 3. IO Planning and PNR 
 
-Now that we have synthesized the verilog lets connect the signal to the Input outputs pins. Follow the command below to map the required pins.
+Now that we have synthesized the verilog lets connect the signal to the input/output pins. Follow the command below to map the required pins.
 
  1. Open the IO planner from the top bar in the software.
 
@@ -149,7 +149,7 @@ Now that we have synthesized the verilog lets connect the signal to the Input ou
 
 </div>
 
- 2. Now we will first map the clock pins , filter the selection by using CLK and OSC_ctrl tab.
+ 2. Now we will first map the clock pins, filter the selection by using CLK and OSC_ctrl tab.
 
  We have two clock related signal "clk" and "clk_en" map them to "OSC_CLK" and "OSC_EN" respectively.
 
@@ -160,7 +160,7 @@ Now that we have synthesized the verilog lets connect the signal to the Input ou
 </div>
  
 
- 3. Lets map the led out signals , filter the selection using only he GPIO , Unpick all the other onces. 
+ 3. Lets map the led out signals, filter the selection using only GPIO, unpick all the other onces. 
 
  We have two signal related to led "LED" and "LED_en" as output, on shrike led is connected to pin number 16 we will connected these signals to "GPIO16_OUT"  and "GPIO16_OE" respectively.
 
@@ -170,7 +170,7 @@ Now that we have synthesized the verilog lets connect the signal to the Input ou
 
 </div>
 
- 4. IO planning has been done save the setting and press Generate Bitstream button in the left bottom . It will take some time to generate bitstream and you will see a green tick after its done. 
+ 4. IO planning has been done save the setting and press Generate Bitstream button in the left bottom. It will take some time to generate bitstream and you will see a green tick after its done. 
 
 <div align="center">
 
@@ -191,6 +191,6 @@ Now that we have synthesized the verilog lets connect the signal to the Input ou
 </div>
 
 
-Now that you have generated your first bitstream let's upload these on the FPGA, that will be pretty simple follow the step 3-4 in this guide or complete guide if you checking it for first time [getting_started](./getting_started.md) . 
+Now that you have generated your first bitstream let's upload these on the FPGA, that will be pretty simple follow the step 3-4 in this guide or complete guide if you checking it for first time [getting_started](./getting_started.md). 
 
 Check out the [Verilog Style Guide](./verilog_style_guide.md) next.
