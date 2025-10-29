@@ -43,7 +43,7 @@ We at vicharak have kept in mind need of a learner, maker and a hobbyist while d
 
 
 ### Check out 
- 1. [Getting started guide](./Docs/getting_started.md) .
+ 1. [Getting started guide](https://vicharak-in.github.io/shrike-lite/index.html) .
  2. [PIN_OUTS](./Docs/shrike_pinouts.md)
 
 

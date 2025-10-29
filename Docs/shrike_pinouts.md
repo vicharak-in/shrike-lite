@@ -11,7 +11,7 @@
 </div>
 
 
-# FPGA RP2040 Communication Pin-outs
+## FPGA RP2040 Communication Pin-outs
 
 ### FPGA CPU Interconnect Pin-outs 
 

@@ -1,3 +1,5 @@
+(generating_your_first_bitstream)=
+
 # Shrike Bitstream Generation Guide 
 
 Bitstream is a firmware that is used to programme the FPGA and map our design to it. Shrike uses a Renesas Forge FPGA SLGV SLG47910 1K Luts FPGA.The datasheet for which can be found [here](https://www.renesas.com/en/products/slg47910) .
@@ -58,17 +60,17 @@ It should look like this.
 </div>
 
 
-Check out this short video guide. 
+.. Check out this short video guide. 
 
 
-<div align="center">
-
-  <video width="90%" controls>
-    <source src="./images/bitstream_gen/go_config_launch.webm" type="video/webm">
-    Your browser does not support the video tag.
-  </video>
-
-</div>
+    <div align="center">
+    
+      <video width="90%" controls>
+        <source src="./images/bitstream_gen/go_config_launch.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    
+    </div>
 
 ### 2. Design 
 
@@ -180,15 +182,6 @@ Now that we have synthesized the verilog lets connect the signal to the Input ou
 
  Congratulation's you have generated your first hardware. 
 
-
-<div align="center">
-
-  <video width="90%" controls>
-    <source src="./images/bitstream_gen/complete_flow.webm" type="video/webm">
-    Your browser does not support the video tag.
-  </video>
-
-</div>
 
 
 Now that you have generated your first bitstream let's upload these on the FPGA, that will be pretty simple follow the step 3-4 in this guide or complete guide if you checking it for first time [getting_started](./getting_started.md) . 

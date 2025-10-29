@@ -1,3 +1,5 @@
+.. _hardware_overview:
+
 =====================================
 Shrike FPGA - Hardware Overview
 =====================================

@@ -1,3 +1,5 @@
+(tools_setup_guide)=
+
 # Setting Up the tools for Shrike
 
 The shrike  features Reneasas Forge FPGA SLG47910 1120 Luts FPGA and RP2040/RP2350 microcontroller from Raspberry Pi.
