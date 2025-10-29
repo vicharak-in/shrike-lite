@@ -16,7 +16,7 @@ Shrike is world's first fully open source FPGA Dev board based on Renesas Forge 
 
 We at vicharak have kept in mind need of a learner, maker and a hobbyist while designing this art. This dev board will be your stepping stone in the field of FPGA , reconfigurable and heterogenous computing.
 
-.. image:: ../../../_static/images/shrike_board.png
+.. image:: ./../asset/shrike_lite.svg
    :width: 100%
    :align: center
 
