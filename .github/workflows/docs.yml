@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'Docs/**'   # Trigger only when files in Docs/ change
 
 permissions:
   contents: write 

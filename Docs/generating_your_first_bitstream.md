@@ -1,6 +1,6 @@
 (generating_your_first_bitstream)=
 
-# Shrike Bitstream Generation Guide 
+# Shrike FPGA Bitstream Generation Guide 
 
 Bitstream is a firmware that is used to programme the FPGA and map our design to it. Shrike uses a Renesas Forge FPGA SLGV SLG47910 1K Luts FPGA.The datasheet for which can be found [here](https://www.renesas.com/en/products/slg47910) .
 
