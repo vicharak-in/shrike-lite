@@ -13,14 +13,14 @@ git clone https://github.com/vicharak-in/shrike-lite.git
 cd shrike-lite/test/hardware_test
 ```
 
-3. Exicute the setup file 
+3. Execute the setup file 
 
 ```
 sudo chmod +x setup.sh
 sudo ./setup.sh
 ```
 
-4. Exicute the test file 
+4. Execute the test file 
 ```
 sudo chmod +x test_shrike.sh
 sudo ./test_shrike.sh
