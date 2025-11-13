@@ -109,21 +109,7 @@
 <section id="getting-the-py-env-and-mpremote">
 <h2>1. Getting the Py-env and mpremote<a class="headerlink" href="#getting-the-py-env-and-mpremote" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#getting-the-py-env-and-mpremote'">¶</a></h2>
 <p>Mpremote is a python package and we will have to use pip to install it thus we need to a py virtual env. (if you already have one use that).</p>
-<p>To get a python virtual env run this command in directory of your choice.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">&lt;</span><span class="n">environment_name</span><span class="o">&gt;</span>
-</span></code></pre></div>
-</div>
-<p>you can omit the &lt;environment_name&gt; as well it will take the name of your directory. Onces the env is created activate it. To do run this</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">source</span> <span class="o">&lt;</span><span class="n">environment_name</span><span class="o">&gt;</span>\<span class="nb">bin</span>\<span class="n">activate</span> 
-</span></code></pre></div>
-</div>
-<p>if you have not given any name then run (and remember if you are any other directory then you have to give the relative path to the dir you created the env in)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">source</span> <span class="nb">bin</span>\<span class="n">activate</span>
-</span></code></pre></div>
-</div>
-<ul class="simple">
-<li><p>Note** - If you don’t really care about what happing around you can download the mpremote system wide as well I won’t tell you how to do so as i am afraid of developers around me(use pipx).</p></li>
-</ul>
+<p>Or to setup a python Env read <a class="reference external" href="https://docs.python.org/3/library/venv.html">this</a> and then activate it .</p>
 <p>Now that your v-env is activated we will get mpremote in the env. To do so run this command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">pip</span> <span class="n">install</span> <span class="n">mpremote</span> 
 </span></code></pre></div>

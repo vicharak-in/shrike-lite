@@ -117,13 +117,19 @@
 </ol>
 <p>Congratulations you have successfully uploaded the uf2.</p>
 </section>
+<section id="shrike-mass-storage-device">
+<h2>2. Shrike Mass Storage Device<a class="headerlink" href="#shrike-mass-storage-device" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#shrike-mass-storage-device'">¶</a></h2>
+<p>Onces that you have copied the uf2 to the Shrike.  The board will disconnect momentary and so up as both a mass storage device and tty/ACM device now the mass storage is the part where you would need to save you bitstream (read step 3).</p>
+<p>The default device ID for mass storage device is <code class="docutils literal notranslate"><span class="pre">5221-0000</span></code> this could be changed as per your choice.
+For windows simply right click and rename for changing the name in linux read <a class="reference external" href="https://superuser.com/questions/223527/renaming-a-fat16-volume">this</a>.</p>
+</section>
 <section id="get-the-bitstream-bin-for-led-blink">
-<h2>2. Get the bitstream(.bin) for led blink<a class="headerlink" href="#get-the-bitstream-bin-for-led-blink" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#get-the-bitstream-bin-for-led-blink'">¶</a></h2>
-<p>To programme a FPGA you will require  bitstream file this is much like a firmware for MCU’s we will see how to generate these but for now we have uploaded the bitstream required for led_bin you can download them the corresponding to your board’s version <a class="reference external" href="https://github.com/vicharak-in/shrike-lite/tree/main/test/bitstreams">here</a>.</p>
+<h2>3. Get the bitstream(.bin) for led blink<a class="headerlink" href="#get-the-bitstream-bin-for-led-blink" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#get-the-bitstream-bin-for-led-blink'">¶</a></h2>
+<p>To program a FPGA you will require  bitstream file this is much like a firmware for MCU’s we will see how to generate these but for now we have uploaded the bitstream required for led_bin you can download them the corresponding to your board’s version <a class="reference external" href="https://github.com/vicharak-in/shrike-lite/tree/main/test/bitstreams">here</a>.</p>
 <p>Now that you have both uf2 and bin file settled up lets move forward and upload the bitstream to board.</p>
 </section>
 <section id="getting-the-thonny-ide">
-<h2>3. Getting the Thonny IDE<a class="headerlink" href="#getting-the-thonny-ide" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#getting-the-thonny-ide'">¶</a></h2>
+<h2>4. Getting the Thonny IDE<a class="headerlink" href="#getting-the-thonny-ide" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#getting-the-thonny-ide'">¶</a></h2>
 <p>The bitstream can be uploaded on the shrike using one of these two ways</p>
 <ol class="arabic simple">
 <li><p>Using a GUI Based-IDE (Thonny)</p></li>
@@ -139,8 +145,11 @@
 </ol>
 </section>
 <section id="flashing-the-bitstream">
-<h2>4. Flashing the bitstream<a class="headerlink" href="#flashing-the-bitstream" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#flashing-the-bitstream'">¶</a></h2>
-<p>Now you should see both the your pc and rp2040 file’s on the left windows now we have to transfer the led_blink.bin file to the rp2040. To do so find the file on your system then right click and upload.</p>
+<h2>5. Flashing the bitstream<a class="headerlink" href="#flashing-the-bitstream" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#flashing-the-bitstream'">¶</a></h2>
+<p>The bitstream needs to be copied to the Shrike Mass storage part this is a simple copy process same way as copying a file to a USB drive.</p>
+<p>Or you can use this way –
+You should in thonny see both the your pc and rp2040 file’s on the left windows now we have to transfer the led_blink.bin file to the rp2040.
+To do so find the file on your system then right click and upload.</p>
 <p>Now we will have to flash this file to the fpga to do so we will use the function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">shrike</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">"&lt;your_bitstream_name&gt;.bin"</span><span class="p">)</span>
 </span></code></pre></div>
@@ -175,9 +184,10 @@
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
 <li><a :data-current="activeSection === '#uploading-the-shrike-uf2'" class="reference internal" href="#uploading-the-shrike-uf2">1. Uploading the shrike UF2</a></li>
-<li><a :data-current="activeSection === '#get-the-bitstream-bin-for-led-blink'" class="reference internal" href="#get-the-bitstream-bin-for-led-blink">2. Get the bitstream(.bin) for led blink</a></li>
-<li><a :data-current="activeSection === '#getting-the-thonny-ide'" class="reference internal" href="#getting-the-thonny-ide">3. Getting the Thonny IDE</a></li>
-<li><a :data-current="activeSection === '#flashing-the-bitstream'" class="reference internal" href="#flashing-the-bitstream">4. Flashing the bitstream</a></li>
+<li><a :data-current="activeSection === '#shrike-mass-storage-device'" class="reference internal" href="#shrike-mass-storage-device">2. Shrike Mass Storage Device</a></li>
+<li><a :data-current="activeSection === '#get-the-bitstream-bin-for-led-blink'" class="reference internal" href="#get-the-bitstream-bin-for-led-blink">3. Get the bitstream(.bin) for led blink</a></li>
+<li><a :data-current="activeSection === '#getting-the-thonny-ide'" class="reference internal" href="#getting-the-thonny-ide">4. Getting the Thonny IDE</a></li>
+<li><a :data-current="activeSection === '#flashing-the-bitstream'" class="reference internal" href="#flashing-the-bitstream">5. Flashing the bitstream</a></li>
 </ul>
 </div>
 </aside>

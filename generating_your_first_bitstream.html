@@ -102,7 +102,7 @@
 <div id="content" role="main">
 <section id="shrike-fpga-bitstream-generation-guide">
 <span id="generating-your-first-bitstream"></span><h1>Shrike FPGA Bitstream Generation Guide<a class="headerlink" href="#shrike-fpga-bitstream-generation-guide" title="Link to this heading">¶</a></h1>
-<p>Bitstream is a firmware that is used to programme the FPGA and map our design to it. Shrike uses a Renesas Forge FPGA SLGV SLG47910 1K Luts FPGA.The datasheet for which can be found <a class="reference external" href="https://www.renesas.com/en/products/slg47910">here</a> .</p>
+<p>Bitstream is a firmware that is used to programme the FPGA and map our design to it. Shrike uses a Renesas Forge FPGA SLGV SLG47910 1K Luts FPGA.The datasheet fr which can be found <a class="reference external" href="https://www.renesas.com/en/products/slg47910">here</a> .</p>
 <p>For generating the bitstream for shrike we will use these steps.</p>
 <ol class="arabic simple">
 <li><p>Setup</p></li>
@@ -172,8 +172,8 @@ It should look like this.</p></li>
 </span></code></pre></div>
 </div>
 <p>Now every output requires a output enable for forge FPGA thus we will define a led_en pin as well and we will keep it high ( value = 1) by default so that led signal ( IO) is always a output from the board.</p>
-<p>We need to figure out a way to so how are we going to blink ( toggle ) this led , for convince lets assume we want to blink it every second . So this tell’s us that we need some kind of clock to check the time and how much time has passed.</p>
-<p>We have a clock on out FPGA its a a pulsating that creates a 50Mhz square wave we have to use this to calculate to one second to do so we can simply add a counter that counts till 50_000_000 cycles as that how much we will require to reach one second at a 50 Mhz frequency.</p>
+<p>We need to figure out a way to so how are we going to blink ( toggle ) this led , for convenience lets assume we want to blink it every second . So this tell’s us that we need some kind of clock to check the time and how much time has passed.</p>
+<p>We have a clock on out FPGA it is a pulsating signal that creates a 50Mhz square wave, we have to use this to calculate one second to do so we can simply add a counter that counts till 50_000_000 cycles as that how much we will require to reach one second at a 50 Mhz frequency.</p>
 <p>Thus now we will create a hardware that blinks a led whenever its counter reaches 50_000_000 and the verilog for this will look like this</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">(* top *) module blink(
 </span><span id="line-2">  (* iopad_external_pin, clkbuf_inhibit *) input clk,

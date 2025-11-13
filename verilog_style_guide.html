@@ -114,7 +114,7 @@ These attribute’s are related to module hierarchy input output ports and clk;<
 <li><p>(* iopad_external_pin, clkbuf_inhibit *) – This should be used for the clk signal so that the yosys creates a clk buffer for this signals path. Use this in only top module.</p></li>
 <li><p>(* iopad_external_pin *) – This needs to be used for every signal that needs to be mapped to the gpio. This the yosys will know not to optimize it or change its name. Only use this for top level io’s not in every module.</p></li>
 </ol>
-<p>A example of all of these used in a i2c top</p>
+<p>An example of all of these used in a i2c top</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">(</span><span class="o">*</span> <span class="n">top</span> <span class="o">*</span><span class="p">)</span> <span class="n">module</span>  <span class="n">i2c_blink</span> <span class="c1">#( parameter I2C_SLAVE_ADR = 7'h32</span>
 </span><span id="line-2">   	  <span class="p">)</span> <span class="p">(</span> 
 </span><span id="line-3">   	<span class="p">(</span><span class="o">*</span> <span class="n">iopad_external_pin</span><span class="p">,</span> <span class="n">clkbuf_inhibit</span> <span class="o">*</span><span class="p">)</span> <span class="nb">input</span> <span class="n">i_clk</span><span class="p">,</span>
@@ -153,8 +153,8 @@ So now the question arises how do to create a bidirectional signal.</p>
 </section>
 <section id="clock-enable">
 <h2>clock enable<a class="headerlink" href="#clock-enable" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#clock-enable'">¶</a></h2>
-<p>The fpga as a internal oscillator connected to the logic fabric and it gives out 50 Mhz clock.</p>
-<p>However top module of our design need ot have a clock_enable signal for enabling in general cases this signal will always be one.
+<p>The fpga has a internal oscillator connected to the logic fabric and it gives out 50 Mhz clock.</p>
+<p>However top module of our design need to have a clock_enable signal for enabling in general cases this signal will always be one.
 Thus this is just a output signal assigned to one in the top module of the design.</p>
 <p><img alt="alt text" src="_images/clk.png"/></p>
 </section>
