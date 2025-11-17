@@ -72,6 +72,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="hardware_overview.html">Hardware Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-it-with-arduinoide">Using it with ArduinoIDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-it-with-micro-python-uf2">Using it with Micro-python UF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools_setup_guide.html">Tools Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generating_your_first_bitstream.html">Generating Bitstream</a></li>
 <li class="toctree-l1"><a class="reference internal" href="verilog_style_guide.html">Verilog Style Guide</a></li>
@@ -102,19 +104,101 @@
 <div id="content" role="main">
 <section id="getting-started">
 <span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
-<p>Hello, so you have got the <strong>Shrike FPGA</strong>, Nice!<br/>
-Now lets blink some leds and say hello to world of hardware.<br/>
-We will along the way see how to setup the required software and toolchain as well.</p>
-<p>Shrike-lite supports two simple ways to begin programming:</p>
-<ol class="arabic simple">
-<li><p><strong>Arduino (C/C++)</strong></p></li>
-<li><p><strong>MicroPython using the UF2 bootloader</strong></p></li>
-</ol>
+<p>Hello! So you’ve got the <strong>Shrike-lite FPGA</strong> - nice!</p>
+<p>Before we explain how programming works on Shrike-lite, it’s important to understand what Shrike-lite actually is and how it differs from all kind of other embedded development boards.</p>
+<p>These points will give you the right foundation, especially if you are new to electronics or computing systems. If you already know the basics of microcontrollers, FPGAs, and embedded systems, you can skip this introduction and jump directly into the programming section.</p>
+<p>Shrike-lite is special because it combines two worlds on a single board:<br/>
+ <strong>A Microcontroller (MCU)</strong> — Raspberry Pi’s <a class="reference external" href="https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html">RP2040</a> (Pico 1 Family)<br/>
+ <strong>An FPGA (Field-Programmable Gate Array)</strong></p>
+<p>You can write software for the micro-controller and create digital circuits on the FPGA, and then let them work together to build powerful and fun projects. If you’re curious to learn more about FPGAs, you can read about them here.</p>
+<p>In Shrike-lite, the micro-controller (RP2040) is connected to the FPGA through an SPI bus. The SPI bus is used for two main purposes:</p>
+<p> 1. <strong>Configuring the FPGA</strong> - loading the bitstream into the FPGA via the RP2040<br/>
+ 2. <strong>Communication</strong> - between the microcontroller (RP2040) and the FPGA.</p>
+<p>While your program is running on the micro-controller, you can configure the FPGA at any time to perform specific tasks. Not only that, once the FPGA is programmed, it can also communicate with the RP2040 back and forth.
+The beauty of this setup is that you can reprogram the FPGA an unlimited number of times, and that’s exactly where reconfigurable computing comes to life.</p>
+<p>As discussed earlier, we’ll need to learn how compilation works for both systems: the FPGA and the micro-controller (RP2040).</p>
+<p>The binary files that the FPGA understands are called <strong>bitstreams</strong>.<br/>
+Follow the guide here to learn how to generate a bitstream for the FPGA:  <a class="reference external" href="https://vicharak-in.github.io/shrike-lite/generating_your_first_bitstream.html">Generating Your First Bitstream</a></p>
+<p>Once you have the bitstream, you’re ready to load it into the FPGA through a microcontroller (RP2040) program.</p>
+<p>We’ll start with a simple blink-LED example to say hello to the world of hardware.<br/>
+Along the way, we’ll also set up the required software and toolchain.</p>
+<p>You can program the microcontroller on Shrike-lite using two methods:<br/>
+ <strong>1. Arduino (C/C++)</strong><br>
+ <strong>2. MicroPython using the UF2 bootloader</strong></br></p>
 <p>Both are beginner-friendly, and you can switch between them anytime.<br/>
-Now that you have the hardware in hand, let’s follow these steps and get Shrike-lite up and running!</p>
-<hr class="docutils"/>
-<section id="uploading-the-shrike-uf2">
-<h2>1. Uploading the shrike UF2<a class="headerlink" href="#uploading-the-shrike-uf2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#uploading-the-shrike-uf2'">¶</a></h2>
+Now that you have the hardware in hand, let’s follow the steps and get Shrike-lite up and running!</p>
+</section>
+<section id="using-it-with-arduinoide">
+<h1>Using it with ArduinoIDE<a class="headerlink" href="#using-it-with-arduinoide" title="Link to this heading">¶</a></h1>
+<p>If you already know Arduino and love working with the Arduino IDE, you can continue using it with Shrike-lite. You do not have to switch to MicroPython unless you want to.,</p>
+<p>We will follow these steps to setup our arduino IDE for shrike. If you don’t have arduino IDE already ,you can download it from <a class="reference external" href="https://www.arduino.cc/en/software/">here</a> or if you are using linux(ubuntu)then just run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">arduino</span>
+</span></code></pre></div>
+</div>
+<section id="step-1-adding-the-board-support-for-rp2040-rp2350">
+<h2>Step 1. Adding the board support for RP2040/RP2350<a class="headerlink" href="#step-1-adding-the-board-support-for-rp2040-rp2350" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-1-adding-the-board-support-for-rp2040-rp2350'">¶</a></h2>
+<p>The Shrike has a on board RP2040/RP2350 has a host controller the Arduino IDE doesn’t native support them however we can add the board support for the same.
+It is quit straight forward we need to add this URL</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">earlephilhower</span><span class="o">/</span><span class="n">arduino</span><span class="o">-</span><span class="n">pico</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="k">global</span><span class="o">/</span><span class="n">package_rp2040_index</span><span class="o">.</span><span class="n">json</span>
+</span></code></pre></div>
+</div>
+<p>in the addition board URL section of arduino IDE which you can find in File-&gt;Preferences.</p>
+<div align="center">
+<a class="reference internal image-reference" href="_images/board_URL.png"><img alt="ADD BOARD URL" src="_images/board_URL.png" style="width: 90%;"/>
+</a>
+</div>
+<p>If you already have another board URL just add a “,” between the two URL’s.</p>
+<p>These board support had been created by <a class="reference external" href="https://github.com/earlephilhower">earlephilhower</a> and you can check out github <a class="reference external" href="https://github.com/earlephilhower/arduino-pico">repository</a> for more details.</p>
+<p>After adding the URL go to Tools-&gt;Boards-&gt;Board Manager in the Arduino IDE.
+Then search for pico and the board from Earle F. Philhower.</p>
+<div align="center">
+<a class="reference internal image-reference" href="_images/board_manager.png"><img alt="ADD BOARD" src="_images/board_manager.png" style="width: 90%;"/>
+</a>
+</div>
+Perfect we have successfully add the board support for the RP2040/RP2350.
+<p>As we discussed earlier, in shrike-lite the micro-controller (RP2040) is responsible for configuring the FPGA.</p>
+<p>To make this possible, we developed a simple mechanism: we store the FPGA bitstreams in the RP2040’s flash memory and retrieve them whenever we need to configure the FPGA.</p>
+</section>
+<section id="step-2-adding-the-littlefs-tool">
+<h2>Step 2. Adding the LittleFS Tool<a class="headerlink" href="#step-2-adding-the-littlefs-tool" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-2-adding-the-littlefs-tool'">¶</a></h2>
+<p>The LittleFS library in Arduino allows you to store, load, and update the bitstream in the flash memory through the microcontroller (RP2040).</p>
+<p>We need to add a Little-FS utility to bind a bin file (FPGA bitstream with code for Shrike). We can find the utility <a class="reference external" href="https://github.com/earlephilhower/arduino-pico-littlefs-plugin/releases/">here</a> download the latest release ZIP.</p>
+<p>We will unzip and copy it to the tools directory in Arduino directory.</p>
+<p>In case of windows you will find the Arduino folder in C disk if you have not changed it during installation.
+In case of linux it would be available in your home directory.</p>
+<p>The directory/ folder  should look like this <code class="docutils literal notranslate"><span class="pre">&lt;home_dir&gt;/Arduino/tools/PicoLittleFS/tool/picolittlefs.jar</span></code></p>
+<p>You will need to restart the Arduino IDE and you should see the Pico Little FS tool like this in your Tools menu.</p>
+<p>For more details on the PicoLittleFS tool checkout this <a class="reference external" href="https://github.com/earlephilhower/arduino-pico-littlefs-plugin">repository</a>.</p>
+</section>
+<section id="step-3-installing-the-shrike-library">
+<h2>Step 3. Installing the Shrike Library<a class="headerlink" href="#step-3-installing-the-shrike-library" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-3-installing-the-shrike-library'">¶</a></h2>
+<p>The Arduino library developed by Vicharak takes care of configuring the FPGA for you. You can install it directly from the Arduino IDE’s Library Manager, just search for <strong>“Shrike”</strong> and install the <strong>Shrike</strong> library.</p>
+<div align="center">
+<a class="reference internal image-reference" href="_images/shrike_lib.png"><img alt="ADD SHRIKE lib" src="_images/shrike_lib.png" style="width: 90%;"/>
+</a>
+</div>
+<p>Choose the first one names as Shrike and not the shrike flash library.
+We are almost done with the setup lets continue and blink en led on FPGA using the arduino IDE.</p>
+</section>
+<section id="step-4-programming-the-fpga-from-arduinoide">
+<h2>Step 4. Programming the FPGA from ArduinoIDE<a class="headerlink" href="#step-4-programming-the-fpga-from-arduinoide" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-4-programming-the-fpga-from-arduinoide'">¶</a></h2>
+<p>Lets program out first bitstream to fpga using the arduino. We will be blinking an led.</p>
+<p>StartArduino IDE and look for Shrike &gt;- shrike_flash in the example section of IDE and then save it with a name of you choice and at a location of your choice. This will create a folder with the name, now in the folder/dir create a subfolder by name <code class="docutils literal notranslate"><span class="pre">data</span></code> keep the case and in mind.</p>
+<p>Any bitstream that needs to be uploaded to the board should be placed in the folder.
+We have already generated and hosted a bitstream to blink led <a class="reference external" href="https://github.com/vicharak-in/shrike-lite/blob/main/test/bitstreams/v1_4/led_blink.bin">here</a> save this bitstream to the data subfolder.</p>
+<p>Checkout guide to learn how to generate your own fpga design <a class="reference internal" href="generating_your_first_bitstream.html"><span class="std std-doc">here</span></a>.</p>
+<p>Onces you have done this go to arduino and hit compile your compilation should finish without error if error occurs don’t we have s discord hope on there.</p>
+<p>If the compilation has been done without any error then it’s time to connect the board in boot mode “ PRESS THE BOOT BUTTON WHILE CONNECTING THE BOARD WITH PC” ( this should be done only the first time of setting up if arduino are if you have programmed the board with any other way last time).</p>
+<p>And then hit upload on the board.</p>
+<p>You should see the beautiful blue led blinking on board.</p>
+<p>Congratulation you have you arduino IDE and shrike ready to programmed using the Arduino infrastructure.</p>
+<blockquote>
+<div><p>Credit and Gratitude  to <a class="reference external" href="https://github.com/earlephilhower/">earlephilhower</a> to creating the board support for RP2040/RP2350 in ArduinoIDE and the little FS tool.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="using-it-with-micro-python-uf2">
+<h1>Using it with Micro-python UF2<a class="headerlink" href="#using-it-with-micro-python-uf2" title="Link to this heading">¶</a></h1>
 <p>We have created custom UF2 for shrike this contains a shrike.py library that has custom function to flash fpga and few others. You can use the normal rpi micro python uf2 as well however the step’s would be different.</p>
 <p>Now we will here safely assume that you will be using our uf2.</p>
 <ol class="arabic simple">
@@ -124,7 +208,6 @@ Now that you have the hardware in hand, let’s follow these steps and get Shrik
 <li><p>After the successful copying the storage device should disappear.</p></li>
 </ol>
 <p>Congratulations you have successfully uploaded the uf2.</p>
-</section>
 <section id="shrike-mass-storage-device">
 <h2>2. Shrike Mass Storage Device<a class="headerlink" href="#shrike-mass-storage-device" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#shrike-mass-storage-device'">¶</a></h2>
 <p>Onces that you have copied the uf2 to the Shrike.  The board will disconnect momentary and so up as both a mass storage device and tty/ACM device now the mass storage is the part where you would need to save you bitstream (read step 3).</p>
@@ -191,11 +274,21 @@ To do so find the file on your system then right click and upload.</p>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#uploading-the-shrike-uf2'" class="reference internal" href="#uploading-the-shrike-uf2">1. Uploading the shrike UF2</a></li>
+<li></li>
+<li><a :data-current="activeSection === '#using-it-with-arduinoide'" class="reference internal" href="#using-it-with-arduinoide">Using it with ArduinoIDE</a><ul>
+<li><a :data-current="activeSection === '#step-1-adding-the-board-support-for-rp2040-rp2350'" class="reference internal" href="#step-1-adding-the-board-support-for-rp2040-rp2350">Step 1. Adding the board support for RP2040/RP2350</a></li>
+<li><a :data-current="activeSection === '#step-2-adding-the-littlefs-tool'" class="reference internal" href="#step-2-adding-the-littlefs-tool">Step 2. Adding the LittleFS Tool</a></li>
+<li><a :data-current="activeSection === '#step-3-installing-the-shrike-library'" class="reference internal" href="#step-3-installing-the-shrike-library">Step 3. Installing the Shrike Library</a></li>
+<li><a :data-current="activeSection === '#step-4-programming-the-fpga-from-arduinoide'" class="reference internal" href="#step-4-programming-the-fpga-from-arduinoide">Step 4. Programming the FPGA from ArduinoIDE</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#using-it-with-micro-python-uf2'" class="reference internal" href="#using-it-with-micro-python-uf2">Using it with Micro-python UF2</a><ul>
 <li><a :data-current="activeSection === '#shrike-mass-storage-device'" class="reference internal" href="#shrike-mass-storage-device">2. Shrike Mass Storage Device</a></li>
 <li><a :data-current="activeSection === '#get-the-bitstream-bin-for-led-blink'" class="reference internal" href="#get-the-bitstream-bin-for-led-blink">3. Get the bitstream(.bin) for led blink</a></li>
 <li><a :data-current="activeSection === '#getting-the-thonny-ide'" class="reference internal" href="#getting-the-thonny-ide">4. Getting the Thonny IDE</a></li>
 <li><a :data-current="activeSection === '#flashing-the-bitstream'" class="reference internal" href="#flashing-the-bitstream">5. Flashing the bitstream</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </aside>
