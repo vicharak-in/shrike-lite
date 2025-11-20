@@ -73,7 +73,7 @@
 <li class="toctree-l1"><a class="reference internal" href="hardware_overview.html">Hardware Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#using-it-with-arduinoide">Using it with ArduinoIDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#using-it-with-micro-python-uf2">Using it with Micro-python UF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-it-with-micro-python">Using it with Micro-python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools_setup_guide.html">Tools Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generating_your_first_bitstream.html">Generating Bitstream</a></li>
 <li class="toctree-l1"><a class="reference internal" href="verilog_style_guide.html">Verilog Style Guide</a></li>
@@ -196,10 +196,12 @@ We have already generated and hosted a bitstream to blink led <a class="referenc
 </div></blockquote>
 </section>
 </section>
-<section id="using-it-with-micro-python-uf2">
-<h1>Using it with Micro-python UF2<a class="headerlink" href="#using-it-with-micro-python-uf2" title="Link to this heading">¶</a></h1>
+<section id="using-it-with-micro-python">
+<h1>Using it with Micro-python<a class="headerlink" href="#using-it-with-micro-python" title="Link to this heading">¶</a></h1>
 <p>We have created custom UF2 for shrike this contains a shrike.py library that has custom function to flash fpga and few others. You can use the normal rpi micro python uf2 as well however the step’s would be different.</p>
 <p>Now we will here safely assume that you will be using our uf2.</p>
+<section id="uploading-the-shrike-uf2">
+<h2>1. Uploading the shrike UF2<a class="headerlink" href="#uploading-the-shrike-uf2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#uploading-the-shrike-uf2'">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Download the uf2 corresponding to your board version from the shrike’s <a class="reference external" href="https://github.com/vicharak-in/shrike-lite">Github</a>.</p></li>
 <li><p>Hold the boot button on the board and connect it the your pc now shrike will show up as as storage device.</p></li>
@@ -207,6 +209,7 @@ We have already generated and hosted a bitstream to blink led <a class="referenc
 <li><p>After the successful copying the storage device should disappear.</p></li>
 </ol>
 <p>Congratulations you have successfully uploaded the uf2.</p>
+</section>
 <section id="shrike-mass-storage-device">
 <h2>2. Shrike Mass Storage Device<a class="headerlink" href="#shrike-mass-storage-device" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#shrike-mass-storage-device'">¶</a></h2>
 <p>Onces that you have copied the uf2 to the Shrike.  The board will disconnect momentary and so up as both a mass storage device and tty/ACM device now the mass storage is the part where you would need to save you bitstream (read step 3).</p>
@@ -244,6 +247,12 @@ To do so find the file on your system then right click and upload.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">shrike</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">"&lt;your_bitstream_name&gt;.bin"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
+<blockquote>
+<div><p>[!NOTE]
+The bitstream file that you need to copy will be named as “FPGA_bitstream_MCU.bin” found in ffpga -&gt; build -&gt; bitstream folder in your project directory.<br/>
+If you copy any other file present in the bitstream folder the fpga wont be programmed.
+You are free to change the name of this file however you please.</p>
+</div></blockquote>
 <p>in thonny open a new python file and write this python script</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="kn">import</span><span class="w"> </span><span class="nn">shrike</span>
 </span><span id="line-2">    <span class="n">shrike</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">"blink_led.bin"</span><span class="p">)</span>
@@ -281,7 +290,8 @@ To do so find the file on your system then right click and upload.</p>
 <li><a :data-current="activeSection === '#step-4-programming-the-fpga-from-arduinoide'" class="reference internal" href="#step-4-programming-the-fpga-from-arduinoide">Step 4. Programming the FPGA from ArduinoIDE</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#using-it-with-micro-python-uf2'" class="reference internal" href="#using-it-with-micro-python-uf2">Using it with Micro-python UF2</a><ul>
+<li><a :data-current="activeSection === '#using-it-with-micro-python'" class="reference internal" href="#using-it-with-micro-python">Using it with Micro-python</a><ul>
+<li><a :data-current="activeSection === '#uploading-the-shrike-uf2'" class="reference internal" href="#uploading-the-shrike-uf2">1. Uploading the shrike UF2</a></li>
 <li><a :data-current="activeSection === '#shrike-mass-storage-device'" class="reference internal" href="#shrike-mass-storage-device">2. Shrike Mass Storage Device</a></li>
 <li><a :data-current="activeSection === '#get-the-bitstream-bin-for-led-blink'" class="reference internal" href="#get-the-bitstream-bin-for-led-blink">3. Get the bitstream(.bin) for led blink</a></li>
 <li><a :data-current="activeSection === '#getting-the-thonny-ide'" class="reference internal" href="#getting-the-thonny-ide">4. Getting the Thonny IDE</a></li>
