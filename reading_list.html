@@ -7,13 +7,14 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Using Shrike With ArduinoIDE | Shrike Documentation</title>
-<meta content="Using Shrike With ArduinoIDE | Shrike Documentation" property="og:title"/>
-<meta content="Using Shrike With ArduinoIDE | Shrike Documentation" name="twitter:title"/>
+<title>Reading List | Shrike Documentation</title>
+<meta content="Reading List | Shrike Documentation" property="og:title"/>
+<meta content="Reading List | Shrike Documentation" name="twitter:title"/>
 <link href="_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
+<link href="shrike_cli_guide.html" rel="prev" title="User guide to access and use shrike from your terminal(CLI)"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -67,7 +68,7 @@
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="hardware_overview.html">Hardware Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html#using-it-with-arduinoide">Using it with ArduinoIDE</a></li>
@@ -77,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="verilog_style_guide.html">Verilog Style Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shrike_pinouts.html">Shrike Pinouts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shrike_cli_guide.html">Shrike CLI Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reading_list.html">Reading List</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reading List</a></li>
 </ul>
 </nav>
 </div>
@@ -97,85 +98,61 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Using Shrike With ArduinoIDE</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Reading List</span>
 </nav>
 <div id="content" role="main">
-<section id="using-shrike-with-arduinoide">
-<span id="shrike-arduino-guide"></span><h1>Using Shrike With ArduinoIDE<a class="headerlink" href="#using-shrike-with-arduinoide" title="Link to this heading">¶</a></h1>
-<p>If you are someone who is familiar with arduino and its infrastructure and don’t want to move away to micro-python no worries we have got you cover.</p>
-<p>These are the steps you can follow make arduino IDE usable with shrike.</p>
-<p>Now before starting you should know that you will still need to use the Renesas Go configure software hub for generating firmware for fpga however all the other task can be done from arduino ide.</p>
-<p>Now we will follow these steps to setup our arduino IDE for shrike. If you don’t have arduino IDE already ,you can download it from <a class="reference external" href="https://www.arduino.cc/en/software/">here</a> or if you are using linux(ubuntu)then just run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">arduino</span>
-</span></code></pre></div>
-</div>
-<section id="step-1-adding-the-board-support-for-rp2040-rp2350">
-<h2>Step 1. Adding the board support for RP2040/RP2350<a class="headerlink" href="#step-1-adding-the-board-support-for-rp2040-rp2350" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-1-adding-the-board-support-for-rp2040-rp2350'">¶</a></h2>
-<p>The Shrike has a on board RP2040/RP2350 has a host controller the Arduino IDE doesn’t native support them however we can add the board support for the same.
-It is quit straight forward we need to add this URL</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">earlephilhower</span><span class="o">/</span><span class="n">arduino</span><span class="o">-</span><span class="n">pico</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="k">global</span><span class="o">/</span><span class="n">package_rp2040_index</span><span class="o">.</span><span class="n">json</span>
-</span></code></pre></div>
-</div>
-<p>in the addition board URL section of arduino IDE which you can find in File-&gt;Preferences.</p>
-<div align="center">
-<a class="reference internal image-reference" href="_images/board_URL.png"><img alt="ADD BOARD URL" src="_images/board_URL.png" style="width: 90%;"/>
-</a>
-</div>
-<p>If you already have another board URL just add a “,” between the two URL’s.</p>
-<p>These board support had been created by <a class="reference external" href="https://github.com/earlephilhower">earlephilhower</a> and you can check out github <a class="reference external" href="https://github.com/earlephilhower/arduino-pico">repository</a> for more details.</p>
-<p>After adding the URL go to Tools-&gt;Boards-&gt;Board Manager in the Arduino IDE.
-Then search for pico and the board from Earle F. Philhower.</p>
-<div align="center">
-<a class="reference internal image-reference" href="_images/board_manager.png"><img alt="ADD BOARD" src="_images/board_manager.png" style="width: 90%;"/>
-</a>
-</div>
-Perfect we have successfully add the board support for the RP2040/RP2350.
+<section id="reading-list">
+<span id="id1"></span><h1>Reading List<a class="headerlink" href="#reading-list" title="Link to this heading">¶</a></h1>
+<p>This is a compilation of the resources and references suggested for Shrike and FPGA in General across the web.</p>
+<section id="learning-resources">
+<h2>1. Learning Resources<a class="headerlink" href="#learning-resources" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#learning-resources'">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://nandland.com/learn-verilog/">NandLand</a></p></li>
+<li><p><a class="reference external" href="https://github.com/BrunoLevy/learn-fpga">Learn FPGA - B Levy</a></p></li>
+<li><p><a class="reference external" href="https://www.fpga4fun.com/">Fpga4Fun</a></p></li>
+<li><p><a class="reference external" href="https://sutherland-hdl.com/papers.html">SutherLand Papers</a></p></li>
+<li><p><a class="reference external" href="http://fpgacpu.ca/">FPGACPU</a></p></li>
+<li><p><a class="reference external" href="https://zipcpu.com/">ZipCpu</a></p></li>
+<li><p><a class="reference external" href="https://projectf.io/">Project F</a></p></li>
+<li><p><a class="reference external" href="https://www.verilogpro.com/">Verilog Pro</a></p></li>
+<li><p><a class="reference external" href="https://www.asic-world.com/verilog/veritut.html">AISC WORLD Verilog Tutorials </a></p></li>
+<li><p><a class="reference external" href="https://lawrie.github.io/blackicemxbook/">Lawrie FPGA Tutorials</a></p></li>
+<li><p><a class="reference external" href="https://lut4.com/">Lut4</a></p></li>
+</ol>
 </section>
-<section id="step-2-adding-the-little-fs-tool">
-<h2>Step 2. Adding the Little-FS Tool<a class="headerlink" href="#step-2-adding-the-little-fs-tool" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-2-adding-the-little-fs-tool'">¶</a></h2>
-<p>Now we need to add a Little-FS utility to bind a bin file (FPGA bitstream with code for Shrike). We can find the utility <a class="reference external" href="https://github.com/earlephilhower/arduino-pico-littlefs-plugin/releases/">here</a> download the latest release ZIP.</p>
-<p>Now we need to unzip and copy it to the tools directory in Arduino directory.</p>
-<p>In case of windows you will find the Arduino folder in C disk if you have not changed it during installation.
-In case of linux it would be available in your home directory.</p>
-<p>The directory/ folder  should look like this <code class="docutils literal notranslate"><span class="pre">&lt;home_dir&gt;/Arduino/tools/PicoLittleFS/tool/picolittlefs.jar</span></code></p>
-<p>Now you will need to restart the Arduino IDE and you should see the Pico Little FS tool like this in your Tools menu.</p>
-<p>For more details on the PicoLittleFS tool checkout this <a class="reference external" href="https://github.com/earlephilhower/arduino-pico-littlefs-plugin">repository</a>.</p>
+<section id="similar-hardware-projects">
+<h2>2. Similar Hardware Projects<a class="headerlink" href="#similar-hardware-projects" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#similar-hardware-projects'">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ulx3s.github.io/">Ulx3s-Project</a></p></li>
+<li><p><a class="reference external" href="https://tinyfpga.com/">TinyFPGA-Project</a></p></li>
+<li><p><a class="reference external" href="https://github.com/icebreaker-fpga/icebreaker">icebreaker-Project</a></p></li>
+<li><p><a class="reference external" href="https://pico-ice.tinyvision.ai/">pico-ice</a></p></li>
+</ol>
 </section>
-<section id="step-3-installing-the-shrike-library">
-<h2>Step 3. Installing the Shrike Library<a class="headerlink" href="#step-3-installing-the-shrike-library" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-3-installing-the-shrike-library'">¶</a></h2>
-<p>Now we need to add the Shrike Library in arduino to do so go to library manager in arduino IDE and search Shrike and install the Shrike library.</p>
-<div align="center">
-<a class="reference internal image-reference" href="_images/shrike_lib.png"><img alt="ADD SHRIKE lib" src="_images/shrike_lib.png" style="width: 90%;"/>
-</a>
-</div>
-<p>Choose the first one names as Shrike and not the shrike flash library.
-We are almost done with the setup lets continue and blink en led on FPGA using the arduino IDE.</p>
-</section>
-<section id="step-4-programming-the-fpga-from-arduinoide">
-<h2>Step 4. Programming the FPGA from ArduinoIDE<a class="headerlink" href="#step-4-programming-the-fpga-from-arduinoide" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#step-4-programming-the-fpga-from-arduinoide'">¶</a></h2>
-<p>Lets program out first bitstream to fpga using the arduino. We will be blinking an led.</p>
-<p>StartArduino IDE and look for Shrike &gt;- shrike_flash in the example section of IDE and then save it with a name of you choice and at a location of your choice. This will create a folder with the name, now in the folder/dir create a subfolder by name <code class="docutils literal notranslate"><span class="pre">data</span></code> keep the case and in mind.</p>
-<p>Any bitstream that needs to be uploaded to the board should be placed in the folder.
-We have already generated and hosted a bitstream to blink led <a class="reference external" href="https://github.com/vicharak-in/shrike-lite/blob/main/test/bitstreams/v1_4/led_blink.bin">here</a> save this bitstream to the data subfolder.</p>
-<p>Checkout guide to learn how to generate your own fpga design <a class="reference internal" href="generating_your_first_bitstream.html"><span class="std std-doc">here</span></a>.</p>
-<p>Onces you have done this go to arduino and hit compile your compilation should finish without error if error occurs don’t we have s discord hope on there.</p>
-<p>If the compilation has been done without any error then it’s time to connect the board in boot mode “ PRESS THE BOOT BUTTON WHILE CONNECTING THE BOARD WITH PC” ( this should be done only the first time of setting up if arduino are if you have programmed the board with any other way last time).</p>
-<p>And then hit upload on the board.</p>
-<p>You should see the beautiful blue led blinking on board.</p>
-<p>Congratulation you have you arduino IDE and shrike ready to programmed using the Arduino infrastructure.</p>
-<blockquote>
-<div><p>Credit and Gratitude  to <a class="reference external" href="https://github.com/earlephilhower/">earlephilhower</a> to creating the board support for RP2040/RP2350 in ArduinoIDE and the little FS tool.</p>
-</div></blockquote>
+<section id="communities-to-join">
+<h2>3. Communities to Join<a class="headerlink" href="#communities-to-join" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#communities-to-join'">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://discord.gg/WwWtuk5w">ULX3S</a></p></li>
+<li><p><a class="reference external" href="https://discord.gg/RQXEF59m">TinyVision</a></p></li>
+<li><p><a class="reference external" href="https://discord.gg/nrnGxCuF">1bitsquared</a></p></li>
+</ol>
 </section>
 </section>
 </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="shrike_cli_guide.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        User guide to access and use shrike from your terminal(CLI)
+      </a>
+</div>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#step-1-adding-the-board-support-for-rp2040-rp2350'" class="reference internal" href="#step-1-adding-the-board-support-for-rp2040-rp2350">Step 1. Adding the board support for RP2040/RP2350</a></li>
-<li><a :data-current="activeSection === '#step-2-adding-the-little-fs-tool'" class="reference internal" href="#step-2-adding-the-little-fs-tool">Step 2. Adding the Little-FS Tool</a></li>
-<li><a :data-current="activeSection === '#step-3-installing-the-shrike-library'" class="reference internal" href="#step-3-installing-the-shrike-library">Step 3. Installing the Shrike Library</a></li>
-<li><a :data-current="activeSection === '#step-4-programming-the-fpga-from-arduinoide'" class="reference internal" href="#step-4-programming-the-fpga-from-arduinoide">Step 4. Programming the FPGA from ArduinoIDE</a></li>
+<li><a :data-current="activeSection === '#learning-resources'" class="reference internal" href="#learning-resources">1. Learning Resources</a></li>
+<li><a :data-current="activeSection === '#similar-hardware-projects'" class="reference internal" href="#similar-hardware-projects">2. Similar Hardware Projects</a></li>
+<li><a :data-current="activeSection === '#communities-to-join'" class="reference internal" href="#communities-to-join">3. Communities to Join</a></li>
 </ul>
 </div>
 </aside>
