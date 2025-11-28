@@ -151,6 +151,10 @@ Connect the board to a host PC using a type c cable and you are good to go.</p>
 The RP2040/RP2350 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.</p>
 <p>The LED’s are active high meaning that when the GPIO pin is set to high the LED will turn on and when the GPIO pin is set to low the LED will turn off.</p>
 </section>
+<section id="flash">
+<h2>FLASH<a class="headerlink" href="#flash" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#flash'">¶</a></h2>
+<p>The Shrike Dev Board features a 32Mb/4MB QSPI based Flash memory which is connected to RP2040/2350. The part number for which is W25Q32JV. This flash is used to store the fpga bitstream and RP2040/RP2350 firmware.</p>
+</section>
 <section id="programming">
 <h2>Programming<a class="headerlink" href="#programming" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#programming'">¶</a></h2>
 <p>Both the IC on the board have separate programming models. The RP2040
@@ -199,6 +203,7 @@ can be programmed using MicroPython or C whereas the FPGA needed to be programme
 <li><a :data-current="activeSection === '#pmod-connector'" class="reference internal" href="#pmod-connector">PMOD Connector</a></li>
 <li><a :data-current="activeSection === '#type-c-port'" class="reference internal" href="#type-c-port">Type C Port</a></li>
 <li><a :data-current="activeSection === '#user-led-s'" class="reference internal" href="#user-led-s">User LED’s</a></li>
+<li><a :data-current="activeSection === '#flash'" class="reference internal" href="#flash">FLASH</a></li>
 <li><a :data-current="activeSection === '#programming'" class="reference internal" href="#programming">Programming</a></li>
 <li><a :data-current="activeSection === '#powering-the-board'" class="reference internal" href="#powering-the-board">Powering the Board</a></li>
 </ul>
