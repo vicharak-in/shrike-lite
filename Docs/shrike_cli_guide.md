@@ -68,11 +68,11 @@ now you can python one line at a time.
 To flash the fpga with bitstream we need to first upload it to the rp2040 to do that we need to simply run the cp command of mpremote. The bitstream file could be found [here](https://github.com/vicharak-in/shrike_fpga/tree/main/test/bitstreams) get the one corresponding to your board version. 
 
 ```
-    mpremote cp blink_led.bin : 
+    mpremote fs cp blink_led.bin : 
 ```
 do not forget the : in the end . Now just run the cmd below to check if the file is copied or not
 ```
-    mpremote ls 
+    mpremote fs ls 
 ```
 lets flash that bitstream to the fpga now.
 
