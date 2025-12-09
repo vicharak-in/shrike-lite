@@ -1,20 +1,26 @@
-# ADD two 8-bit Number on FPGA and send back using UART.
+# Add Two 8-bit Numbers on FPGA and Return Result via UART
 
-In this example we have demonstrated how to send two 8-bit numbers from RP2040 to FPGA using UART communication and then FPGA add them and send the result back to RP2040 using UART.
+This project demonstrates UART-based communication between an RP2040 and an FPGA. Two 8-bit numbers are sent from the RP2040 to the FPGA over UART. The FPGA stores the received values, performs an addition operation, and then transmits the result back to the RP2040 using UART.
 
-In this project, we have implemented a small FSM in FPGA.
+## System Overview
 
-UART RX → Register A
+The FPGA implements a small finite state machine (FSM) to sequentially receive and process the data.
 
-UART RX → Register B
-
-    ↓
-8-bit Adder (A + B)
-
-    ↓
-
+UART RX → Register A  
+UART RX → Register B  
+            ↓  
+        8-bit Adder (A + B)  
+            ↓  
 UART TX → Send SUM
 
-The example works on 115200 baud rate however you can change it form the parameter in the top module.
+## UART Settings
 
-The python script for the rp2040 is also include here.
+Default baud rate: 115200
+
+The baud rate can be changed by modifying the parameter in the FPGA top module.
+
+## Included Files
+
+FPGA HDL implementation
+
+Python script for the RP2040 to send operands and receive the result via UART
