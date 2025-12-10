@@ -2,20 +2,17 @@ from machine import UART, Pin
 import time
 
 # Reset
-# reset_pin = Pin(2, Pin.OUT, value=1)
-# reset_pin.value(1)
-# time.sleep(1)
-# reset_pin.value(0)
-# time.sleep(1)
+reset_pin = Pin(2, Pin.OUT, value=1)
+reset_pin.value(1)
+time.sleep(1)
+reset_pin.value(0)
+time.sleep(1)
 
 # Initialize UART0 (TX=GPIO0, RX=GPIO1)
 uart = UART(0, baudrate=115200, tx=Pin(0), rx=Pin(1))
 
 def send_value(value):
     uart.write(bytes([value]))
-
-# If not getting correct response rerun the code. 
-# Then you will get correct output.
 
 value = 1
 while True:
