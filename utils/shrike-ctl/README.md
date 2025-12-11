@@ -45,3 +45,9 @@ Where:
 - `<PORT>` is the serial port name (e.g., `COM5` on Windows, `/dev/ttyACM0` or `/dev/ttyUSB0` on Linux).  
 - `<BitstreamFilePath>` is the path to your FPGA bitstream file.
 
+
+#### In your CMakeLists.txt file, update the path to the location where you downloaded the pico-sdk. This path is required in CMakeLists.txt.
+Replace your path `include(/home/prasad-gaikwad/pico-sdk/pico_sdk_import.cmake)`
+
+Download `PICO-SDK` [here]{ https://github.com/raspberrypi/pico-sdk/blob/master/README.md}
+ 
