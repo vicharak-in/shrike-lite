@@ -105,18 +105,18 @@
 <div id="content" role="main">
 <section id="getting-started">
 <span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
-<p>In this getting started guide we will see how to blink an led on shrike both on fpga and RP2040.</p>
-<p>You can program the microcontroller on Shrike-lite using two methods:<br/>
+<p>In this getting started guide we will see how to blink an led on shrike both on fpga and RP2350/RP2040.</p>
+<p>You can program the microcontroller on Shrike using two methods:<br/>
  <strong>1. Arduino (C/C++)</strong><br>
  <strong>2. MicroPython using the UF2 bootloader</strong></br></p>
 <p>Both are beginner-friendly, and you can switch between them anytime.<br/>
-Let’s follow the steps and get Shrike-lite up and running!</p>
+Let’s follow the steps and get Shrike up and running!</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
 <label class="sd-tab-label" for="sd-tab-item-0">
 ArduinoIDE</label><div class="sd-tab-content docutils">
 <p class="rubric" id="using-it-with-arduinoide">Using it with ArduinoIDE</p>
-<p>If you already know Arduino and love working with the Arduino IDE, you can continue using it with Shrike-lite. You do not have to switch to MicroPython unless you want to.,</p>
+<p>If you already know Arduino and love working with the Arduino IDE, you can continue using it with Shrike. You do not have to switch to MicroPython unless you want to.,</p>
 <p>We will follow these steps to setup our arduino IDE for shrike. If you don’t have arduino IDE already ,you can download it from <a class="reference external" href="https://www.arduino.cc/en/software/">here</a> or if you are using linux(ubuntu)then just run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">arduino</span>
 </span></code></pre></div>
@@ -215,12 +215,12 @@ For windows simply right click and rename for changing the name in linux read <a
 <p>Open thonny and connect the board to the laptop (do not press boot button this time). And do these two things</p>
 <ol class="arabic simple">
 <li><p>Connect the board from the bottom right corner of Thonny IDE.</p></li>
-<li><p>Go to file view mode in the thonny to see the rp2040 as a file system.</p></li>
+<li><p>Go to file view mode in the thonny to see the RP2350/RP2040 as a file system.</p></li>
 </ol>
 <p class="rubric" id="flashing-the-bitstream">5. Flashing the bitstream</p>
 <p>The bitstream needs to be copied to the Shrike Mass storage part this is a simple copy process same way as copying a file to a USB drive.</p>
 <p>Or you can use this way –
-You should in thonny see both the your pc and rp2040 file’s on the left windows now we have to transfer the led_blink.bin file to the rp2040.
+You should in thonny see both the your pc and RP2350/RP2040 file’s on the left windows now we have to transfer the led_blink.bin file to the RP2350/RP2040.
 To do so find the file on your system then right click and upload.</p>
 <p>Now we will have to flash this file to the fpga to do so we will use the function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">    <span class="n">shrike</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">"&lt;your_bitstream_name&gt;.bin"</span><span class="p">)</span>
@@ -237,7 +237,7 @@ You are free to change the name of this file however you please.</p>
 </span><span id="line-2">    <span class="n">shrike</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">"blink_led.bin"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
-<p>Save this file to your board (RP2040) and run it. (to run this file on board boot up just name it as main.py)</p>
+<p>Save this file to your board (RP2350/RP2040) and run it. (to run this file on board boot up just name it as main.py)</p>
 </div>
 </div>
 <p>If everything has been done correctly you should see led blinking on the board.</p>

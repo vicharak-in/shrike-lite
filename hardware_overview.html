@@ -106,35 +106,35 @@
 <section id="shrike-fpga-hardware-overview">
 <span id="hardware-overview"></span><h1>Shrike FPGA - Hardware Overview<a class="headerlink" href="#shrike-fpga-hardware-overview" title="Link to this heading">¶</a></h1>
 <p>Shrike is a low-cost, low-power, and easy-to-use FPGA development board that combines both the
-Renesas FPGA and the RP2040 microcontroller. It is designed for hobbyists, students, and professionals to explore and prototype FPGA-based designs with ease.</p>
+Renesas FPGA and the RP2350/RP2040 microcontroller. It is designed for hobbyists, students, and professionals to explore and prototype FPGA-based designs with ease.</p>
 <p>The board features a variety of peripherals to support various applications. Some of the key features include:</p>
 <section id="hardware-features">
 <h2>Hardware Features :<a class="headerlink" href="#hardware-features" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#hardware-features'">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Renesas FPGA with 1120 5 Input LUT’s</p></li>
-<li><p>RP2040</p></li>
+<li><p>MCU - RP2350/RP2040</p></li>
 <li><p>PMOD Connector</p></li>
 <li><p>Reset Button</p></li>
 <li><p>Boot Select Button</p></li>
 <li><p>USB Type C for Power &amp; Programming</p></li>
-<li><p>RP2040 User LED</p></li>
+<li><p>MCU User LED</p></li>
 <li><p>FPGA User LED</p></li>
-<li><p>23 RP2040 GPIO’</p></li>
+<li><p>23 MCU GPIO’</p></li>
 <li><p>14 FPGA GPIO’s</p></li>
-<li><p>6 Bit FPGA CPU Link</p></li>
+<li><p>6 Bit FPGA MCU Link</p></li>
 <li><p>Bread Board Compatible</p></li>
 </ul>
 </div></blockquote>
 </section>
 <section id="gpio-s">
 <h2>GPIO’s<a class="headerlink" href="#gpio-s" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gpio-s'">¶</a></h2>
-<p>The Shrike Packed with User IO’s I have 23 RP2040 MCU IO’s and 14 FPGA IO’s all of which are 3.3V compatible.</p>
+<p>The Shrike Packed with User IO’s I have 23 MCU IO’s and 14 FPGA IO’s all of which are 3.3V compatible.</p>
 <p>The Board also has Header for 3.3V and 5V Power Rails for powering external peripherals.</p>
 </section>
 <section id="pmod-connector">
 <h2>PMOD Connector<a class="headerlink" href="#pmod-connector" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#pmod-connector'">¶</a></h2>
-<p>The Shrike Board has a PMOD connector for connecting to various peripherals the PMOD connector is 3.3 V Compatible</p>
+<p>The Shrike Board has a PMOD connector for connecting to various peripherals,the PMOD connector is 3.3 V Compatible</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All the pins on shrike are 3.3 V compatible supplying anything more than that will result in damage to IC’s on  board which are beyond repair.</p>
@@ -147,35 +147,34 @@ Connect the board to a host PC using a type c cable and you are good to go.</p>
 </section>
 <section id="user-led-s">
 <h2>User LED’s<a class="headerlink" href="#user-led-s" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#user-led-s'">¶</a></h2>
-<p>The board has two user LED’s one for the RP2040 and one for the FPGA. The LED’s are connected to GPIO pins of the respective chips.
-The RP2040/RP2350 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.</p>
+<p>The board has two user LED’s one for the RP2350/RP2040 and one for the FPGA. The LED’s are connected to GPIO pins of the respective chips.
+The RP2350/RP2040 LED is connected to GPIO 04 and the FPGA LED is connected to GPIO 16.</p>
 <p>The LED’s are active high meaning that when the GPIO pin is set to high the LED will turn on and when the GPIO pin is set to low the LED will turn off.</p>
 </section>
 <section id="flash">
 <h2>FLASH<a class="headerlink" href="#flash" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#flash'">¶</a></h2>
-<p>The Shrike Dev Board features a 32Mb/4MB QSPI based Flash memory which is connected to RP2040/2350. The part number for which is W25Q32JV. This flash is used to store the fpga bitstream and RP2040/RP2350 firmware.</p>
+<p>The Shrike Dev Board features a 32Mb/4MB QSPI based Flash memory which is connected to RP2350/RP2040. The part number for which is W25Q32JV. This flash is used to store the fpga bitstream and RP2350/RP2040 firmware.</p>
 </section>
 <section id="programming">
 <h2>Programming<a class="headerlink" href="#programming" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#programming'">¶</a></h2>
 <p>Both the IC on the board have separate programming models. The RP2040
-can be programmed using MicroPython or C whereas the FPGA needed to be programmed using Verilog in the Renesas Go Configure hub.</p>
+can be programmed using MicroPython, Arduino or Rpi’s C SDK whereas the FPGA needed to be programmed using Verilog in the Renesas Go Configure hub.</p>
 </section>
 <section id="powering-the-board">
 <h2>Powering the Board<a class="headerlink" href="#powering-the-board" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#powering-the-board'">¶</a></h2>
 <dl>
 <dt>The board can be powered using one of these two methods:</dt><dd><ol class="arabic simple">
 <li><p>The USB Type C port</p></li>
-<li><p>Header 1 marked 3.3V and any of the GND pins on the board.</p></li>
+<li><p>Header 1 marked 5V and any of the GND pins on the board.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The board can be powered using the USB Type C port or the header marked 3.3V. Do not power the board using both methods at the same time as this may damage the board.</p>
+<p>The board can be powered using the USB Type C port or the header marked 5V. Do not power the board using both methods at the same time as this will damage the board.</p>
 </div>
 </dd>
 </dl>
-<p>The voltage on the Type C should be 5V and the voltage on the header should be 3.3V. The board has a voltage regulator that converts the 5V to 3.3V for the RP2040 and the FPGA.</p>
+<p>The voltage on the Type C and header both should be 5V only. The board has a voltage regulator that converts the 5V to 3.3V for the RP2350/RP2040 and the FPGA.</p>
 <p>The voltage on the PMOD connector is 3.3V.</p>
-<p>See <a class="reference external" href="./getting_started.md">here</a>  Guide to getting started with FPGA Programming.</p>
 </section>
 </section>
 </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
