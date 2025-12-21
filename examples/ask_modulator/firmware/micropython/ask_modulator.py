@@ -1,3 +1,9 @@
+"""
+This specific example demonstrates a simple ASK (Amplitude Shift Key) Modulator that sends out "HelloShrike123" with the specified CODEBOOK, as long as the CODEBOOK is no larger than 2^6 (64 bits) the example should work as is.
+
+"""
+
+
 from machine import Pin
 import time
 
